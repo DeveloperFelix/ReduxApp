@@ -35,8 +35,8 @@ render() {
     let sortedUserList = sortedList.map((item) => (
 
          <UserItem
-           key={item.id}
-           id={item.created_at}
+           key={item.created_at}
+           id={item.id}
            name={item.name}
            job={item.occupation}
            email={item.email}
