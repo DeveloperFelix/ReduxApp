@@ -1,0 +1,64 @@
+div#User{
+ display: flex;
+ flex-direction: column;
+ background-color: none;
+ justify-content: space-between;
+ width:15%;
+ border:1px solid black;
+ margin-bottom: 0.5%;
+ margin-left: 0.5%;
+ background-color: none;
+}
+
+div#list_div{
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ width: 100%;
+ margin-top: 2%;
+ justify-content: center;
+
+}
+div#header{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  margin-bottom: 2%;
+}
+label#name{
+  text-decoration: underline;
+}
+label#email{
+ font-style: italic;
+}
+label#prof{
+  font-size: 75%
+}
+p#page{
+    display: flex;
+  flex-direction: row;
+  justify-content: center;
+   overflow: hidden;
+   position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    
+   
+}
+div#email{
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+   position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+div#body{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+}

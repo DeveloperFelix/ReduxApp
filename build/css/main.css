@@ -1,0 +1,21 @@
+div#header_redux{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	background-color: grey;
+	width: 100%;
+    top:0;
+    justify-content: center;
+    left: 0;
+    padding: 1%;
+}
+div#footer{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	background-color:grey;
+	width: 100%;
+    bottom:0;
+    text-align: center;
+    left: 0;
+}
