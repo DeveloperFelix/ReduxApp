@@ -36,7 +36,7 @@ render() {
 
          <UserItem
            key={item.id}
-           id={item.id}
+           id={item.created_at}
            name={item.name}
            job={item.occupation}
            email={item.email}
