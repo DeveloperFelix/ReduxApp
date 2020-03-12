@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import {UserItem} from './User';
 import {getUserData} from './actions/index';
 import editUserData from './actions/index';
+import USER_UPDATED from './constants/action-types';
+import { v4 as uuidv4 } from 'uuid';
 
 
  const mapDispatchToProps = (dispatch,ownProps) => ({
@@ -10,9 +12,9 @@ import editUserData from './actions/index';
          handleClick: (arg) => {
               dispatch(editUserData(arg));
               },
-          getUserData:()=> {
-            dispatch(getUserData());
-          }    
+         getUserData:() =>{
+          dispatch(getUserData());
+         }        
         
  });
 
@@ -35,8 +37,9 @@ render() {
     let sortedUserList = sortedList.map((item) => (
 
          <UserItem
-           key={item.created_at}
+           key={uuidv4()}
            id={item.id}
+           unique_id={item.created_at}
            name={item.name}
            job={item.occupation}
            email={item.email}

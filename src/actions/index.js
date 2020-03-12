@@ -1,6 +1,8 @@
 import {GET_USERS,USER_UPDATED,ERR} from '../constants/action-types';
 
 
+import RANDOM_USER from '../samples_users';
+
 
 export function getUserData() {
   return function(dispatch){
@@ -14,17 +16,16 @@ export function getUserData() {
 
 
 export default function editUserData(id) {
-
   return function(dispatch){
 
   return fetch("https://ti-react-test.herokuapp.com/users/"+id+"",{
             method: 'PATCH',
             body: JSON.stringify({
-             name:"ALPHA ALPHA",
-             email:'sample@gmail.com',
-             occupation:"Hunter",
-             bio:'LIVE FREE'
-            }),
+               name:"Amnda",
+               email:'ammanda@gmail.com',
+               occupation:"HouseWife",
+               bio:"Dedicated woman and mother of four,aint no sucker"            
+             }),
             headers:{
               "Content-type": "application/json; charset=UTF-8"
             }
@@ -33,7 +34,8 @@ export default function editUserData(id) {
 
     .then(response => response.json())
     .then(json => {
-       dispatch({ type: USER_UPDATED, payload: json });
+      console.log(json)
+       dispatch({ type: USER_UPDATED,payload: json });
     })
     .catch(error => {
         dispatch({ type: ERR, payload: null });
