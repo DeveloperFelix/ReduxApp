@@ -4,13 +4,16 @@ import {GET_USERS,USER_UPDATED,ERR} from '../constants/action-types';
 import RANDOM_USER from '../samples_users';
 
 
+
+
 export function getUserData() {
   return function(dispatch){
   return fetch("https://ti-react-test.herokuapp.com/users")
     .then(response => response.json())
     .then(json => {
       dispatch({ type: GET_USERS, payload: json });
-    });
+    })
+    .catch(error =>{ dispatch({ type: ERR, error: handleError() }); });
   };
 }
 
@@ -34,12 +37,22 @@ export default function editUserData(id) {
 
     .then(response => response.json())
     .then(json => {
-      console.log(json)
        dispatch({ type: USER_UPDATED,payload: json });
     })
     .catch(error => {
-        dispatch({ type: ERR, payload: null });
+        dispatch({ type: ERR, error: handleError() });
     });
   };
+}
+
+function handleError(){
+
+  return{
+      name:"NO DATA",
+      bio:'NO DATA',
+      occupation:'NO DATA',
+      email:'NO DATA' 
+  }
+
 }
 

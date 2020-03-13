@@ -12,19 +12,19 @@ function rootReducer(state = initialState, action) {
     return Object.assign({}, state, {
       users: state.users.concat(action.payload)
     });
-  }
-
-  if(action.type === USER_UPDATED){
-  	return Object.assign({}, state, {
+  }else if(action.type === USER_UPDATED){
+    return Object.assign({}, state, {
       users: state.users.concat(action.payload)
     });
-    
-  }
+  }else if(action.type === ERR){
+     return Object.assign({}, state, {
+      users: state.users.concat(action.error)
+    });
+  }else{
 
-  if(action.type === ERR){
-    return ERR;
-  }
-  return state;
+    return state;
+}
+
 };
 
 export default rootReducer;
